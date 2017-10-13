@@ -1,0 +1,53 @@
+
+@startuml
+skinparam class {
+	BackgroundColor #FFFFFF
+	ArrowColor #000000
+	BorderColor #000000
+	BorderColor<<InnerType>> #777777
+	BackgroundColor<<InnerType>> #EEEEEE
+	FontName Courier
+	FontSize 12
+}
+skinparam note {
+	BackgroundColor #dedede
+	BorderColor #000000
+	FontSize 10
+}
+skinparam classAttribute {
+	FontName Courier
+	FontSize 12
+}
+class Comment  << ( ,#ff0000) >> {
+    -date: String
+    -text: String
+    -user: String
+}
+class Document  << ( ,#ff00ff) >> {
+    -<color:#ff0000 ><b>comments: List<Comment></b></color>
+    -date: String
+    -gid: UUID
+    -icon: String
+    -path: String
+    -preview: String
+    -tags: List<UUID>
+    -<color:#0000ff ><b>type: Document_type</b></color>
+}
+class Document_type  << ( ,#0000ff) >> {
+    -active: Boolean
+    -comment: String
+    -gid: UUID
+    -text: String
+}
+class Tag  << ( ,#007f00) >> {
+    -color: String
+    -comment: String
+    -gid: UUID
+    -text: String
+}
+hide methods
+Document *-- "many" Comment #ff0000
+            Document .. "many" Tag #007f00
+Document *--  Document_type #0000ff
+footer powered by plantuml, created with jsonCodeGen
+@enduml
