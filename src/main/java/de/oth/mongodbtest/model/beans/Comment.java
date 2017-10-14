@@ -6,7 +6,8 @@ import de.oth.mongodbtest.model.interfaces.*;
 
 
 
-public class Comment implements IComment {
+public class Comment extends de.oth.mongodbtest.mongodb.MongoDbConnection <Comment>
+    implements IComment {
     
     
     /**

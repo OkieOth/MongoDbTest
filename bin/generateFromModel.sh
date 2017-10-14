@@ -19,6 +19,7 @@ $JSONCODEGEN_HOME/jsonCodeGen.sh -g plantuml -o docs -m model/example.json \
 $JSONCODEGEN_HOME/jsonCodeGen.sh -g java_interfaces -o src/main/java -m model/example.json \
     -gp packageName=de.oth.mongodbtest.model.interfaces
 
-$JSONCODEGEN_HOME/jsonCodeGen.sh -g java_interfaced_beans -o src/main/java -m model/example.json \
-    -gp packageName=de.oth.mongodbtest.model.beans -gp interfacePackageName=de.oth.mongodbtest.model.interfaces 
+$JSONCODEGEN_HOME/jsonCodeGen.sh -g java_interfaced_generic_derived_beans -o src/main/java -m model/example.json \
+    -gp packageName=de.oth.mongodbtest.model.beans -gp interfacePackageName=de.oth.mongodbtest.model.interfaces \
+    -gp genericClass=de.oth.mongodbtest.mongodb.MongoDbConnection
 

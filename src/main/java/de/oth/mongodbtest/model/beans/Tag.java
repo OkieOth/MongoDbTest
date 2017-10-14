@@ -6,7 +6,8 @@ import de.oth.mongodbtest.model.interfaces.*;
 
 
 
-public class Tag implements ITag {
+public class Tag extends de.oth.mongodbtest.mongodb.MongoDbConnection <Tag>
+    implements ITag {
     
     
     /**

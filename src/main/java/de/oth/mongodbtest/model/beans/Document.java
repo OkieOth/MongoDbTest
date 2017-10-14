@@ -6,7 +6,8 @@ import de.oth.mongodbtest.model.interfaces.*;
 
 
 
-public class Document implements IDocument {
+public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Document>
+    implements IDocument {
     
     
     private java.util.List<IComment> comments;
