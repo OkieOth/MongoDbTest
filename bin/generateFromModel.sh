@@ -16,3 +16,10 @@ fi
 $JSONCODEGEN_HOME/jsonCodeGen.sh -g plantuml -o docs -m model/example.json \
   -gp removeEmptyLines=true
 
+$JSONCODEGEN_HOME/jsonCodeGen.sh -g java_interfaces -o src/main/java -m model/example.json \
+    -gp packageName=de.oth.mongodbtest.model.interfaces -gp removeEmptyLines=true
+
+$JSONCODEGEN_HOME/jsonCodeGen.sh -g java_interfaced_beans -o src/main/java -m model/example.json \
+    -gp packageName=de.oth.mongodbtest.model.beans -gp interfacePackageName=de.oth.mongodbtest.model.interfaces \
+    -gp removeEmptyLines=true
+

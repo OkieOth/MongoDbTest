@@ -24,25 +24,25 @@ class Comment  << ( ,#ff0000) >> {
     -user: String
 }
 class Document  << ( ,#ff00ff) >> {
-    -<color:#ff0000 ><b>comments: List<Comment></b></color>
+    -<color:#ff0000 ><b>comments: java.util.List<Comment></b></color>
     -date: String
-    -gid: UUID
+    -gid: java.util.UUID
     -icon: String
     -path: String
     -preview: String
-    -tags: List<UUID>
+    -tags: java.util.List<java.util.UUID>
     -<color:#0000ff ><b>type: Document_type</b></color>
 }
 class Document_type  << ( ,#0000ff) >> {
     -active: Boolean
     -comment: String
-    -gid: UUID
+    -gid: java.util.UUID
     -text: String
 }
 class Tag  << ( ,#007f00) >> {
     -color: String
     -comment: String
-    -gid: UUID
+    -gid: java.util.UUID
     -text: String
 }
 hide methods
