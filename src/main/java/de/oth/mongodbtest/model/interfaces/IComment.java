@@ -8,8 +8,8 @@ public interface IComment {
      * date of entry
      */
     
-    public String getDate ();
-    public void setDate (String date);
+    public java.util.Date getDate ();
+    public void setDate (java.util.Date date);
     
     
     /**

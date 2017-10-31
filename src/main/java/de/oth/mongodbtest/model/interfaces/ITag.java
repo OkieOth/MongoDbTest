@@ -20,8 +20,12 @@ public interface ITag {
     public void setComment (String comment);
     
     
-    public java.util.UUID getGid ();
-    public void setGid (java.util.UUID gid);
+    public java.util.Date getCreated ();
+    public void setCreated (java.util.Date created);
+    
+    
+    public String getGid ();
+    public void setGid (String gid);
     
     
     /**

@@ -20,21 +20,21 @@ public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Docu
 
     
     
-    private String date;
+    private java.util.Date date;
 
-    public String getDate () { return this.date; }
+    public java.util.Date getDate () { return this.date; }
 
-    public void setDate (String date) {
+    public void setDate (java.util.Date date) {
         this.date = date;
     }
 
     
     
-    private java.util.UUID gid;
+    private String gid;
 
-    public java.util.UUID getGid () { return this.gid; }
+    public String getGid () { return this.gid; }
 
-    public void setGid (java.util.UUID gid) {
+    public void setGid (String gid) {
         this.gid = gid;
     }
 
@@ -82,11 +82,11 @@ public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Docu
 
     
     
-    private java.util.List<java.util.UUID> tags;
+    private java.util.List<String> tags;
 
-    public java.util.List<java.util.UUID> getTags () { return this.tags; }
+    public java.util.List<String> getTags () { return this.tags; }
 
-    public void setTags (java.util.List<java.util.UUID> tags) {
+    public void setTags (java.util.List<String> tags) {
         this.tags = tags;
     }
 

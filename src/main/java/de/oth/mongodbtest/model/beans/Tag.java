@@ -38,11 +38,21 @@ public class Tag extends de.oth.mongodbtest.mongodb.MongoDbConnection <Tag>
 
     
     
-    private java.util.UUID gid;
+    private java.util.Date created;
 
-    public java.util.UUID getGid () { return this.gid; }
+    public java.util.Date getCreated () { return this.created; }
 
-    public void setGid (java.util.UUID gid) {
+    public void setCreated (java.util.Date created) {
+        this.created = created;
+    }
+
+    
+    
+    private String gid;
+
+    public String getGid () { return this.gid; }
+
+    public void setGid (String gid) {
         this.gid = gid;
     }
 

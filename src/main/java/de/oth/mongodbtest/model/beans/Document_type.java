@@ -38,11 +38,11 @@ public class Document_type extends de.oth.mongodbtest.mongodb.MongoDbConnection 
 
     
     
-    private java.util.UUID gid;
+    private String gid;
 
-    public java.util.UUID getGid () { return this.gid; }
+    public String getGid () { return this.gid; }
 
-    public void setGid (java.util.UUID gid) {
+    public void setGid (String gid) {
         this.gid = gid;
     }
 

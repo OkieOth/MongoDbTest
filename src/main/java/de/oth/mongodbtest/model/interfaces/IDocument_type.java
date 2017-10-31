@@ -20,8 +20,8 @@ public interface IDocument_type {
     public void setComment (String comment);
     
     
-    public java.util.UUID getGid ();
-    public void setGid (java.util.UUID gid);
+    public String getGid ();
+    public void setGid (String gid);
     
     
     /**

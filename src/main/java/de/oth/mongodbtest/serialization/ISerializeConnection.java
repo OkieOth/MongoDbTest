@@ -4,8 +4,7 @@ import java.util.List;
 
 public interface ISerializeConnection<T> {
     /**
-     * read object represented by id from the backend
-     * @param id
+     * one object from the backend
      * @return
      * @throws SerializationException
      */
@@ -24,7 +23,7 @@ public interface ISerializeConnection<T> {
      * @return
      * @throws SerializationException
      */
-    public T save() throws SerializationException;
+    public void save() throws SerializationException;
 
     /**
      * deletes the object from the backend

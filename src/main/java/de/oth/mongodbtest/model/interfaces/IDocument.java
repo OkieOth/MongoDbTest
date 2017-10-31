@@ -8,12 +8,12 @@ public interface IDocument {
     public void setComments (java.util.List<IComment> comments);
     
     
-    public String getDate ();
-    public void setDate (String date);
+    public java.util.Date getDate ();
+    public void setDate (java.util.Date date);
     
     
-    public java.util.UUID getGid ();
-    public void setGid (java.util.UUID gid);
+    public String getGid ();
+    public void setGid (String gid);
     
     
     /**
@@ -40,8 +40,8 @@ public interface IDocument {
     public void setPreview (String preview);
     
     
-    public java.util.List<java.util.UUID> getTags ();
-    public void setTags (java.util.List<java.util.UUID> tags);
+    public java.util.List<String> getTags ();
+    public void setTags (java.util.List<String> tags);
     
     
     public IDocument_type getType ();

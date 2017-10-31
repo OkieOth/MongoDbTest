@@ -61,6 +61,10 @@
         "color": {
           "description": "color that marks this tag",
           "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "format": "datetime"
         }
       }
     },

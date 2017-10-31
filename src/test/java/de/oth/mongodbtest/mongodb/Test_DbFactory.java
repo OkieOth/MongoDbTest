@@ -19,4 +19,9 @@ public class Test_DbFactory {
         assertEquals("my-first",factory.getDatabaseName());
         System.out.println("test: testInit");
     }
+
+    @Test
+    public void printUUID() {
+        java.util.UUID uuid = java.util.UUID.randomUUID();
+    }
 }

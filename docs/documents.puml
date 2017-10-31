@@ -19,30 +19,31 @@ skinparam classAttribute {
 	FontSize 12
 }
 class Comment  << ( ,#ff0000) >> {
-    -date: String
+    -date: java.util.Date
     -text: String
     -user: String
 }
 class Document  << ( ,#ff00ff) >> {
     -<color:#ff0000 ><b>comments: java.util.List<Comment></b></color>
-    -date: String
-    -gid: java.util.UUID
+    -date: java.util.Date
+    -gid: String
     -icon: String
     -path: String
     -preview: String
-    -tags: java.util.List<java.util.UUID>
+    -tags: java.util.List<String>
     -<color:#0000ff ><b>type: Document_type</b></color>
 }
 class Document_type  << ( ,#0000ff) >> {
     -active: Boolean
     -comment: String
-    -gid: java.util.UUID
+    -gid: String
     -text: String
 }
 class Tag  << ( ,#007f00) >> {
     -color: String
     -comment: String
-    -gid: java.util.UUID
+    -created: java.util.Date
+    -gid: String
     -text: String
 }
 hide methods

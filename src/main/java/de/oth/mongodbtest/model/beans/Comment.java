@@ -6,19 +6,18 @@ import de.oth.mongodbtest.model.interfaces.*;
 
 
 
-public class Comment extends de.oth.mongodbtest.mongodb.MongoDbConnection <Comment>
-    implements IComment {
+public class Comment implements IComment {
     
     
     /**
      * date of entry
      */
     
-    private String date;
+    private java.util.Date date;
 
-    public String getDate () { return this.date; }
+    public java.util.Date getDate () { return this.date; }
 
-    public void setDate (String date) {
+    public void setDate (java.util.Date date) {
         this.date = date;
     }
 
