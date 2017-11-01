@@ -56,4 +56,37 @@ public class Document_type extends de.oth.mongodbtest.mongodb.MongoDbConnection 
     }
 
     
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==null) return false;
+        if ( ! (obj instanceof Document_type)) return false;
+
+        Document_type _typeInst = (Document_type) obj;
+    
+        Boolean _active = _typeInst.getActive ();
+        if (this.active == null && _active != null) return false;
+        if (this.active != null) {
+            if (!this.active.equals(_active)) return false;
+        }
+    
+        String _comment = _typeInst.getComment ();
+        if (this.comment == null && _comment != null) return false;
+        if (this.comment != null) {
+            if (!this.comment.equals(_comment)) return false;
+        }
+    
+        String _gid = _typeInst.getGid ();
+        if (this.gid == null && _gid != null) return false;
+        if (this.gid != null) {
+            if (!this.gid.equals(_gid)) return false;
+        }
+    
+        String _text = _typeInst.getText ();
+        if (this.text == null && _text != null) return false;
+        if (this.text != null) {
+            if (!this.text.equals(_text)) return false;
+        }
+    
+        return true;
+    }
 }

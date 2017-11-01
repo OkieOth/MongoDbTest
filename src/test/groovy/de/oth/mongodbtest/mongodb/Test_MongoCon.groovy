@@ -13,7 +13,9 @@ import org.junit.Test
 import de.oth.mongodbtest.model.beans.Tag
 
 import static com.mongodb.client.model.Filters.exists
+import static junit.framework.Assert.assertTrue
 import static junit.framework.TestCase.assertEquals
+import static junit.framework.TestCase.assertFalse
 import static junit.framework.TestCase.assertNotNull
 import static junit.framework.TestCase.assertNull
 
@@ -143,6 +145,10 @@ class Test_MongoCon {
         assertEquals(doc.getPreview(),doc2.getPreview());
         assertEquals(2,doc2.getComments().size())
         assertEquals(3,doc2.getTags().size())
+
+        assertTrue(doc.equals(doc2))
+        doc2.setPath(null)
+        assertFalse(doc.equals(doc2))
     }
 
         @Test

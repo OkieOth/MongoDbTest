@@ -96,4 +96,61 @@ public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Docu
     }
 
     
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==null) return false;
+        if ( ! (obj instanceof Document)) return false;
+
+        Document _typeInst = (Document) obj;
+    
+        java.util.List<Comment> _comments = _typeInst.getComments ();
+        if (this.comments == null && _comments != null) return false;
+        if (this.comments != null) {
+            if (!this.comments.equals(_comments)) return false;
+        }
+    
+        java.util.Date _date = _typeInst.getDate ();
+        if (this.date == null && _date != null) return false;
+        if (this.date != null) {
+            if (!this.date.equals(_date)) return false;
+        }
+    
+        String _gid = _typeInst.getGid ();
+        if (this.gid == null && _gid != null) return false;
+        if (this.gid != null) {
+            if (!this.gid.equals(_gid)) return false;
+        }
+    
+        String _icon = _typeInst.getIcon ();
+        if (this.icon == null && _icon != null) return false;
+        if (this.icon != null) {
+            if (!this.icon.equals(_icon)) return false;
+        }
+    
+        String _path = _typeInst.getPath ();
+        if (this.path == null && _path != null) return false;
+        if (this.path != null) {
+            if (!this.path.equals(_path)) return false;
+        }
+    
+        String _preview = _typeInst.getPreview ();
+        if (this.preview == null && _preview != null) return false;
+        if (this.preview != null) {
+            if (!this.preview.equals(_preview)) return false;
+        }
+    
+        java.util.List<String> _tags = _typeInst.getTags ();
+        if (this.tags == null && _tags != null) return false;
+        if (this.tags != null) {
+            if (!this.tags.equals(_tags)) return false;
+        }
+    
+        Document_type _type = _typeInst.getType ();
+        if (this.type == null && _type != null) return false;
+        if (this.type != null) {
+            if (!this.type.equals(_type)) return false;
+        }
+    
+        return true;
+    }
 }

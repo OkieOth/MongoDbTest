@@ -45,4 +45,33 @@ public class Comment {
     }
 
     
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==null) return false;
+        if ( ! (obj instanceof Comment)) return false;
+
+        Comment _typeInst = (Comment) obj;
+    
+        java.util.Date _date = _typeInst.getDate ();
+        if (this.date == null && _date != null) return false;
+        if (this.date != null) {
+            if (!this.date.equals(_date)) return false;
+        }
+    
+        String _text = _typeInst.getText ();
+        if (this.text == null && _text != null) return false;
+        if (this.text != null) {
+            if (!this.text.equals(_text)) return false;
+        }
+    
+        String _user = _typeInst.getUser ();
+        if (this.user == null && _user != null) return false;
+        if (this.user != null) {
+            if (!this.user.equals(_user)) return false;
+        }
+    
+        return true;
+    }
+
 }
