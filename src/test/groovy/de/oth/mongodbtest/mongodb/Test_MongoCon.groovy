@@ -3,6 +3,9 @@ package de.oth.mongodbtest.mongodb
 import com.mongodb.BasicDBObject
 import com.mongodb.client.MongoCollection
 import com.mongodb.client.MongoDatabase
+import de.oth.mongodbtest.model.beans.Comment
+import de.oth.mongodbtest.model.beans.Document
+import de.oth.mongodbtest.model.beans.Document_type
 import de.oth.mongodbtest.serialization.SerializationException
 import org.junit.AfterClass
 import org.junit.BeforeClass
@@ -87,12 +90,68 @@ class Test_MongoCon {
     }
 
     @Test
+    public void test_insertDocument() throws SerializationException {
+        DbFactory.setConfigFile("src/test/resources/local-mongo.properties");
+        DbFactory factory = DbFactory.getInst();
+        MongoDatabase mongoDatabase = factory.getDB();
+        assertNotNull(mongoDatabase);
+        println (Document.class.getSimpleName())
+        MongoCollection<Document> collection = mongoDatabase.getCollection(Document.class.getSimpleName(),Document.class);
+        collection.drop()
+        Document dummy = new Document()
+        List<Document> docList = dummy.getList()
+        assertEquals(0,docList.size())
+        // insert new Document
+        Document doc = new Document();
+        doc.setDate(new Date())
+        doc.setIcon('TestIcon')
+        doc.setPath('c:\\mydocs\test.jpg')
+        doc.setPreview('TestPreview')
+        Document_type docType = new Document_type()
+        docType.setText("TestDocType")
+        docType.setActive(true)
+        docType.setGid(UUID.randomUUID().toString())
+        doc.setType(docType)
+        
+        Comment comment1 = new Comment()
+        comment1.setText('I am a first comment')
+        comment1.setDate(new Date())
+        comment1.setUser("Batman")
+
+        Comment comment2 = new Comment()
+        comment2.setText('I contain a Ä')
+        comment2.setDate(new Date())
+        comment2.setUser("Robin")
+
+        List<Comment> commentList = []
+        commentList.add(comment1)
+        commentList.add(comment2)
+        doc.setComments(commentList);
+
+        List<String> tagList = ['tag1', 'tag2', 'tag3']
+        doc.setTags(tagList)
+        doc.save()
+        assertNotNull(doc.getGid())
+        // read now a new list
+        docList = dummy.getList()
+        assertEquals(1,docList.size())
+
+        Document doc2 = docList.get(0)
+        assertEquals(doc.getDate(),doc2.getDate());
+        assertEquals(doc.getIcon(),doc2.getIcon());
+        assertEquals(doc.getPath(),doc2.getPath());
+        assertEquals(doc.getPreview(),doc2.getPreview());
+        assertEquals(2,doc2.getComments().size())
+        assertEquals(3,doc2.getTags().size())
+    }
+
+        @Test
     public void test_insertTag() throws SerializationException {
         DbFactory.setConfigFile("src/test/resources/local-mongo.properties");
         DbFactory factory = DbFactory.getInst();
         MongoDatabase mongoDatabase = factory.getDB();
         assertNotNull(mongoDatabase);
-        MongoCollection<Tag> collection = mongoDatabase.getCollection(Tag.getClass().getName(),Tag.class);
+        MongoCollection<Tag> collection = mongoDatabase.getCollection(Tag.class.getSimpleName(),Tag.class);
         collection.drop()
         Tag dummy = new Tag()
         // read an empty list
@@ -116,7 +175,8 @@ class Test_MongoCon {
         assertEquals(tag.getColor(),tag2.getColor())
         assertEquals(tag.getComment(),tag2.getComment())
         assertEquals(tag.getText(),tag2.getText())
-        
+        assertEquals(tag.getCreated(),tag2.getCreated())
+
         // read the value by id
         Tag tagById = dummy.getById(tag.getGid().toString())
         assertNotNull(tagById)
@@ -124,6 +184,7 @@ class Test_MongoCon {
         assertEquals(tag.getColor(),tagById.getColor())
         assertEquals(tag.getComment(),tagById.getComment())
         assertEquals(tag.getText(),tagById.getText())
+        assertEquals(tag.getCreated(),tagById.getCreated())
 
         tagById.delete()
         Tag tagById2 = dummy.getById(tag.getGid().toString())

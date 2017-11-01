@@ -1,13 +1,8 @@
 package de.oth.mongodbtest.model.beans;
 
 
-import de.oth.mongodbtest.model.interfaces.*;
 
-
-
-
-public class Tag extends de.oth.mongodbtest.mongodb.MongoDbConnection <Tag>
-    implements ITag {
+public class Tag extends de.oth.mongodbtest.mongodb.MongoDbConnection <Tag> {
     
     
     /**

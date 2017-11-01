@@ -1,12 +1,7 @@
 package de.oth.mongodbtest.model.beans;
 
 
-import de.oth.mongodbtest.model.interfaces.*;
-
-
-
-
-public class Comment implements IComment {
+public class Comment {
     
     
     /**

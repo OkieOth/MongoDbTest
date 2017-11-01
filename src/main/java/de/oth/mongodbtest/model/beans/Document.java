@@ -1,20 +1,15 @@
 package de.oth.mongodbtest.model.beans;
 
 
-import de.oth.mongodbtest.model.interfaces.*;
 
-
-
-
-public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Document>
-    implements IDocument {
+public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Document> {
     
     
-    private java.util.List<IComment> comments;
+    private java.util.List<Comment> comments;
 
-    public java.util.List<IComment> getComments () { return this.comments; }
+    public java.util.List<Comment> getComments () { return this.comments; }
 
-    public void setComments (java.util.List<IComment> comments) {
+    public void setComments (java.util.List<Comment> comments) {
         this.comments = comments;
     }
 
@@ -92,11 +87,11 @@ public class Document extends de.oth.mongodbtest.mongodb.MongoDbConnection <Docu
 
     
     
-    private IDocument_type type;
+    private Document_type type;
 
-    public IDocument_type getType () { return this.type; }
+    public Document_type getType () { return this.type; }
 
-    public void setType (IDocument_type type) {
+    public void setType (Document_type type) {
         this.type = type;
     }
 

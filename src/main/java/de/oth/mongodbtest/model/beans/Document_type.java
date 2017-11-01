@@ -1,13 +1,8 @@
 package de.oth.mongodbtest.model.beans;
 
 
-import de.oth.mongodbtest.model.interfaces.*;
 
-
-
-
-public class Document_type extends de.oth.mongodbtest.mongodb.MongoDbConnection <Document_type>
-    implements IDocument_type {
+public class Document_type extends de.oth.mongodbtest.mongodb.MongoDbConnection <Document_type> {
     
     
     /**
