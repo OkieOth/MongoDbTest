@@ -6,6 +6,7 @@ skinparam class {
 	BorderColor #000000
 	BorderColor<<InnerType>> #777777
 	BackgroundColor<<InnerType>> #EEEEEE
+	BackgroundColor<<GidType>> #e4ffd4
 	FontName Courier
 	FontSize 12
 }
@@ -23,7 +24,7 @@ class Comment  << ( ,#ff0000) >> {
     -text: String
     -user: String
 }
-class Document  << ( ,#ff00ff) >> {
+class Document <<GidType>> << ( ,#ff00ff) >> {
     -<color:#ff0000 ><b>comments: java.util.List<Comment></b></color>
     -date: java.util.Date
     -gid: String
@@ -33,13 +34,13 @@ class Document  << ( ,#ff00ff) >> {
     -tags: java.util.List<String>
     -<color:#0000ff ><b>type: Document_type</b></color>
 }
-class Document_type  << ( ,#0000ff) >> {
+class Document_type <<GidType>> << ( ,#0000ff) >> {
     -active: Boolean
     -comment: String
     -gid: String
     -text: String
 }
-class Tag  << ( ,#007f00) >> {
+class Tag <<GidType>> << ( ,#007f00) >> {
     -color: String
     -comment: String
     -created: java.util.Date
@@ -48,7 +49,6 @@ class Tag  << ( ,#007f00) >> {
 }
 hide methods
 Document *-- "many" Comment #ff0000
-            Document .. "many" Tag #007f00
 Document *--  Document_type #0000ff
 footer powered by plantuml, created with jsonCodeGen
 @enduml
