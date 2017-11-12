@@ -4,5 +4,6 @@ services:
         image: "mongo"
         volumes:
             - "./data:/data/db"
+            - "./output:/data/output"
         ports:
                 - "27017:27017"
